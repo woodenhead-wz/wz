@@ -25,8 +25,8 @@ def findCityCode(cityName):
 def getCityWeather(cityId):
 #     print 'page url: ',PAGE_PREFIX + cityId + PAGE_POSTFIX
     page = urllib2.urlopen(PAGE_PREFIX + cityId + PAGE_POSTFIX)
-    pageHtml = page.read().decode('utf-8')
-    print pageHtml
+    pageHtml = page.read()
+#     print pageHtml
     soup = BeautifulSoup(pageHtml)
     title = soup.html.head.title
     print title.get_text()
